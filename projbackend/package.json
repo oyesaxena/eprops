@@ -8,11 +8,7 @@
     "npm":"6.14.5"
   },
   "scripts": {
-    "start": "nodemon app.js",
-    "build": "cd .. && cd projfrontend && npm run build",
-    "install-client": "cd .. && cd projfrontend && npm install",
-    "heroku-postbuild":"npm run install-client & npm run build",
-    "client":"cd .. && cd projfrontend && npm start"
+    "start": "nodemon app.js"
     },
   "keywords": [],
   "author": "",
