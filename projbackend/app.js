@@ -44,7 +44,7 @@ const port = process.env.PORT || 8000;
 
 //DB connection
 let connnection = mongoose
-  .connect(process.env.DATABASE, {
+  .connect("mongodb+srv://nikhil:nikhil@photo.ai7w2.mongodb.net/<dbname>?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
