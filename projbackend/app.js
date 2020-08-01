@@ -268,6 +268,14 @@ app.post("/upload", upload.array("imgCollection", 1000),async (req, res) => {
   });
 });
 
+if (process.env.NODE_ENV === "production"){
+  app.use(express.static("projfrontend/build"))
+
+  app.get("*",(req,res)=>{
+    res.sendFile(path.resolve(__dirname,"../projfrontend","build","index.html"))
+  })
+}
+
 app.listen(port, () => {
   console.log(`app is running at ${port}`);
 });
