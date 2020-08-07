@@ -40,7 +40,7 @@ export default class userEdit extends Component {
   }; 
 
   getUsers=()=>{
-      axios.get("http://localhost:8000/userEdit/"+this.props.match.params.userId)
+      axios.get("http://3.7.254.186:8000/userEdit/"+this.props.match.params.userId)
       .then((response)=>{
           console.log(response.data)
           const data= response.data
@@ -78,7 +78,7 @@ export default class userEdit extends Component {
     console.log(this.state.name);
     console.log(this.state.email);
     this.setState({userId:userId},()=>{
-        axios.post("http://localhost:8000/userEdit", {name:this.state.name,email:this.state.email,password:this.state.password,title:this.state.title,status:this.state.status,userId:this.state.userId}).then((res) => {
+        axios.post("http://3.7.254.186:8000/userEdit", {name:this.state.name,email:this.state.email,password:this.state.password,title:this.state.title,status:this.state.status,userId:this.state.userId}).then((res) => {
             console.log(res.data);
             
           });

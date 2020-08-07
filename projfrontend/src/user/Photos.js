@@ -57,7 +57,7 @@ class Photos extends Component {
     console.log(this.state.offset)
     console.log(this.state.postsPerPage)
     const userData = JSON.parse(localStorage.jwt);
-    axios.post("http://localhost:8000/userImages/"+userData.user._id,{userId:userData.user._id,offset:this.state.offset})
+    axios.post("http://3.7.254.186:8000/userImages/"+userData.user._id,{userId:userData.user._id,offset:this.state.offset})
     .then((response)=>{
       const data = response.data
       this.setState({ images: data, loading: false });
@@ -83,7 +83,7 @@ class Photos extends Component {
     console.log(this.state.offset)
     console.log(this.state.postsPerPage)
     axios
-      .get("http://localhost:8000/userImages/" + userData.user._id)
+      .get("http://3.7.254.186:8000/userImages/" + userData.user._id)
       .then((response) => {
         console.log(response.data);
         const data = response.data;
@@ -118,7 +118,7 @@ class Photos extends Component {
       const userData = JSON.parse(localStorage.jwt);
 
       axios
-        .post("http://localhost:8000/selectImage/" + userData.user._id, {
+        .post("http://3.7.254.186:8000/selectImage/" + userData.user._id, {
           selectedImage: this.state.selectedImage,
           userId: userData.user._id,
         })

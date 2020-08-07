@@ -101,7 +101,7 @@ export default class FilesUploadComponent extends Component {
     formData.append("status", this.state.status);
     console.log(formData);
 
-    axios.post("http://localhost:8000/upload", formData, {}).then(() => {
+    axios.post("http://3.7.254.186:8000/upload", formData, {}).then(() => {
      
       window.location.reload(false);
     });

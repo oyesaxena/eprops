@@ -54,7 +54,7 @@ class Videos extends Component {
   getUserImages = () => {
     const userData = JSON.parse(localStorage.jwt);
     axios
-      .get("http://localhost:8000/userVideos/" + userData.user._id)
+      .get("http://3.7.254.186:8000/userVideos/" + userData.user._id)
       .then((response) => {
         console.log(response.data);
         const data = response.data;

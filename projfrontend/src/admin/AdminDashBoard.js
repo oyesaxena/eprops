@@ -51,7 +51,7 @@ class AdminDashboard extends Component {
 
   getUsers = () => {
     axios
-      .get("http://localhost:8000/getUsers/")
+      .get("http://3.7.254.186:8000/getUsers/")
       .then((response) => {
         console.log(response.data);
         const data = response.data;
@@ -77,7 +77,7 @@ class AdminDashboard extends Component {
         
         console.log(this.state.id);
         axios
-          .post("http://localhost:8000/deleteUser", { id: this.state.id })
+          .post("http://3.7.254.186:8000/deleteUser", { id: this.state.id })
           .then((res) => {
             this.getUsers()
             console.log(res.data);

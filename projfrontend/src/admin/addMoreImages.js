@@ -35,7 +35,7 @@ export default class AddMoreImages extends Component {
     this.setState({ imgCollection: e.target.files },()=>{console.log(this.state.imgCollection)});
   }
   getUsers=()=>{
-    axios.get("http://localhost:8000/userAddImages/"+this.props.match.params.userId)
+    axios.get("http://3.7.254.186:8000/userAddImages/"+this.props.match.params.userId)
     .then((response)=>{
         console.log(response.data)
         const data= response.data
@@ -59,7 +59,7 @@ export default class AddMoreImages extends Component {
     formData.append("userId",this.state.userId)
     console.log(formData);
 
-    axios.post("http://localhost:8000/userAddImages/"+this.props.match.params.userId, formData, {}).then(() => {
+    axios.post("http://3.7.254.186:8000/userAddImages/"+this.props.match.params.userId, formData, {}).then(() => {
      
       this.getUsers()
       window.location.reload(false);

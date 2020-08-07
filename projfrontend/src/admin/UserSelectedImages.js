@@ -52,7 +52,7 @@ class Selected extends Component {
   getUserImages = () => {
     
     axios
-      .get("http://localhost:8000/selectedImages/" + this.props.match.params.userId)
+      .get("http://3.7.254.186:8000/selectedImages/" + this.props.match.params.userId)
       .then((response) => {
         console.log(response.data);
         const data = response.data;
@@ -86,7 +86,7 @@ class Selected extends Component {
 
       axios
         .post(
-          "http://localhost:8000/removeSelectedImage/" + userData.user._id,
+          "http://3.7.254.186:8000/removeSelectedImage/" + userData.user._id,
           {
             selectedImage: this.state.selectedImage,
             userId: userData.user._id,
