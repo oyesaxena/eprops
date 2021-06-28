@@ -22,8 +22,8 @@ const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
 
 aws.config.update({
-  secretAccessKey: "zQCWYH3uAdxSbdXrq08HdfvPlKrqofqwxK1bKlZ3",
-  accessKeyId: "AKIA2I74CACGXOEL6Q7Q",
+  secretAccessKey: process.env.SECRET_KEY,
+  accessKeyId: process.env.ACCESS_KEY,
   region: "ap-south-1",
 });
 
